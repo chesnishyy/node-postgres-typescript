@@ -1,11 +1,15 @@
 import express from "express";
 import path from "path";
+import dotenv from "dotenv";
+
+// initialize configuration
+dotenv.config();
+
+// port is now available to the Node.js runtime
+// as if it were an environment variable
+const port = process.env.SERVER_PORT;
 
 const app = express();
-const port = 9999; // default port to listen
-
-// tslint:disable-next-line:no-console
-console.log(__dirname);
 
 // Configure Express to use EJS
 app.set( "views", path.join( __dirname, "views" ) );
